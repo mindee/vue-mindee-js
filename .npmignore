@@ -1,8 +1,0 @@
-docs
-node_modules
-tsconfig.json
-rollup.config.js
-.gitignore
-build-docs
-src
-.netfliy
