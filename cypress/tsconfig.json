@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "baseUrl": ".",
+    "types": ["vite/client", "@types/jest", "cypress", "cypress-image-snapshot"]
+  },
+  "include": ["**/*.ts*"]
+}

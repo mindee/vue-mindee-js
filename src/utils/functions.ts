@@ -1,0 +1,58 @@
+import { KONVA_REFS } from "@/common/constants";
+import Konva from "konva";
+import { LineConfig } from "konva/lib/shapes/Line";
+
+export const drawLayer = (stage: Konva.Stage) => {
+  const shapesLayer = stage.findOne<Konva.Layer>(`#${KONVA_REFS.shapesLayer}`);
+  if (shapesLayer) {
+    shapesLayer.batchDraw();
+  } else {
+    console.error("drawLayer : the layer is not found");
+  }
+};
+
+export const drawShape = (
+  stage: Konva.Stage,
+  id: string | number,
+  config: LineConfig
+) => {
+  const shape = stage.findOne(`#${id}`);
+  if (shape) {
+    shape.setAttrs(config);
+    shape.draw();
+  } else {
+    console.error("drawShape : The provided shape id is not valid");
+  }
+};
+
+export const drawShapes = (stage: Konva.Stage, config: LineConfig) => {
+  const shapes = stage.find(`.${KONVA_REFS.shape}`);
+  if (shapes.length) {
+    shapes.forEach((shape) => {
+      shape.setAttrs(config);
+    });
+    drawLayer(stage);
+  }
+};
+
+export const setShapeConfig = (
+  stage: Konva.Stage,
+  id: string | number,
+  config: LineConfig
+) => {
+  const shape = stage.findOne(`#${id}`);
+  if (shape) {
+    shape.setAttrs(config);
+  } else {
+    console.error("setShapeConfig : The provided shape id is not valid");
+  }
+};
+
+export const toBase64 = (
+  base64: string,
+  type:
+    | "application/pdf"
+    | "image/jpeg"
+    | "image/png"
+    | "image/svg+xml" = "image/jpeg"
+) => `data:${type};base64,${base64}`;
