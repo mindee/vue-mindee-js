@@ -17,4 +17,4 @@ getImagesFromPDF(pdfFile).then((images: string[]) => {
 <iframe 
 style={{
     width:"100%", height:"80vh", border:0, borderRadius: 4, overflow:"hidden" }}
- src="https://codesandbox.io/embed/vue-mindee-js-pdf-file-l1xtc?fontsize=14&hidenavigation=1&theme=dark"  title="vue-mindee-js - Canvas + Basic form Example" allow="accelerometer, ambient-light-sensor, camera, encrypted-media, geolocation, gyroscope, hid, microphone, midi, payment, usb, vr, xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" ></iframe>
+ src="https://codesandbox.io/embed/vue-mindee-js-pdf-file-l1xtc?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&theme=dark"  title="vue-mindee-js - Canvas + Basic form Example" allow="accelerometer, ambient-light-sensor, camera, encrypted-media, geolocation, gyroscope, hid, microphone, midi, payment, usb, vr, xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" ></iframe>
