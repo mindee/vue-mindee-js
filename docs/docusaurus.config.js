@@ -49,7 +49,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} GPLv3 © mindee`,
+      copyright: `Copyright © ${new Date().getFullYear()} MIT © mindee`,
     },
     prism: {
       theme: lightCodeTheme,

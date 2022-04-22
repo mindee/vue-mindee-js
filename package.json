@@ -1,9 +1,9 @@
 {
   "name": "vue-mindee-js",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Computer Vision SDK for Vue",
   "author": "@mindee",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "publicMindee/vue-mindee-js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
