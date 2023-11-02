@@ -110,9 +110,3 @@ const applyRotation = (file: string, orientation: number) =>
 
     image.src = file;
   });
-
-export const rotateLeft = (file: string): Promise<string> =>
-  applyRotation(file, 8);
-
-export const rotateRight = (file: string): Promise<string> =>
-  applyRotation(file, 6);
