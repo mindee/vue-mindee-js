@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import {
-  AnnotationLens,
-  PointerPosition,
-  AnnotationData,
-  AnnotationLensProps,
-} from "../../dist";
+import { AnnotationLens, PointerPosition, AnnotationData } from "@/index";
 import { dummyShapes } from "../assets/shapes";
 import demo from "../assets/demo.jpg";
 import anotherDemo from "../assets/another-demo.jpg";

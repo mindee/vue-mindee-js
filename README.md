@@ -36,7 +36,7 @@ npm install --save vue-mindee-js
 or using yarn
 
 ```
-yarn add vue-mindee-js
+pnpm install vue-mindee-js
 ```
 
 ## Usage
@@ -44,10 +44,6 @@ yarn add vue-mindee-js
 You only need an image and a list of shapes to get started.
 
 ```jsx
-<template>
-  <AnnotationViewer :data="data" />
-</template>
-
 <script>
 import { AnnotationViewer } from "vue-mindee-js";
 import dummyImage from "path/to/file.jpg";
@@ -73,21 +69,16 @@ const dummyShapes = [
   },
 ]
 
-export default {
-  name: "App",
-  components: {
-    AnnotationViewer,
-  },
-  data: function () {
-    return {
-      data: {
-        image: dummyImage,
-        shapes: dummyShapes,
-      },
-    };
-  },
+const data = {
+  image: dummyImage,
+  shapes: dummyShapes,
+  orientation: 0,
 };
 </script>
+
+<template>
+  <AnnotationViewer :data="data" />
+</template>
 
 ```
 

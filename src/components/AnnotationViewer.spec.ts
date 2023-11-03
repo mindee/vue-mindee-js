@@ -1,16 +1,19 @@
-import { mount } from "@cypress/vue";
-import AnnotationViewerTester from "../helpers/AnnotationViewerTester.vue";
+import AnnotationViewerTester from "../../cypress/helpers/AnnotationViewerTester.vue";
 import { Key } from "ts-key-enum";
-import { dummyShapes } from "../assets/shapes";
+import { dummyShapes } from "../../cypress/assets/shapes";
 
 const containerId = "annotationViewer";
 
 describe("AnnotationViewer", () => {
   it("mount correctly", () => {
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
+        onShapeClick: () => {},
+        onShapeMouseEnter: () => {},
+        onShapeMouseLeave: () => {},
+        onShapeMultiSelect: () => {},
       },
     }).then(() => {
       cy.wait(500);
@@ -26,10 +29,14 @@ describe("AnnotationViewer", () => {
     });
   });
   it("zoom correctly", () => {
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
+        onShapeClick: () => {},
+        onShapeMouseEnter: () => {},
+        onShapeMouseLeave: () => {},
+        onShapeMultiSelect: () => {},
       },
     }).then(() => {
       cy.get(`#${containerId}`)
@@ -67,7 +74,7 @@ describe("AnnotationViewer", () => {
       .spy(events, "onShapeMouseLeave")
       .withArgs(dummyShapes[1]);
 
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
@@ -122,7 +129,7 @@ describe("AnnotationViewer", () => {
       },
     };
     cy.spy(events, "onShapeMultiSelect");
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
@@ -148,10 +155,14 @@ describe("AnnotationViewer", () => {
   });
   it("support custom options", () => {
     dummyShapes[0].config = { fill: "green", opacity: 0.2 };
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
+        onShapeClick: () => {},
+        onShapeMouseEnter: () => {},
+        onShapeMouseLeave: () => {},
+        onShapeMultiSelect: () => {},
       },
     }).then(() => {
       cy.get(`#${containerId}`).matchImageSnapshot("custom-options");
@@ -159,10 +170,14 @@ describe("AnnotationViewer", () => {
   });
 
   it("support state changes", () => {
-    mount(AnnotationViewerTester, {
+    cy.mount(AnnotationViewerTester, {
       log: true,
       props: {
         id: containerId,
+        onShapeClick: () => {},
+        onShapeMouseEnter: () => {},
+        onShapeMouseLeave: () => {},
+        onShapeMultiSelect: () => {},
       },
     }).then(() => {
       cy.wait(500);

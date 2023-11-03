@@ -1,7 +1,5 @@
 import { mount } from "@cypress/vue";
-import AnnotationLensTester from "../helpers/AnnotationLensTester.vue";
-import { Key } from "ts-key-enum";
-import { dummyShapes } from "assets/shapes";
+import AnnotationLensTester from "../../cypress/helpers/AnnotationLensTester.vue";
 
 const containerId = "annotationLens";
 
