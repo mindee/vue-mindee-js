@@ -5,3 +5,6 @@ build
 .vscode
 .docz
 .netlify
+storybook-static
+*.log
+build-*
