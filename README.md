@@ -1,4 +1,4 @@
-# Check [Vue mindee documentation](https://vue-mindee-js.netlify.app) for docs, guides, API and more!
+# Check [Vue mindee documentation](https://vue-mindee-js.netlify.app) and [Storybook](https://6544f0ebd09f956e0a9f10f3-tynzmijvtv.chromatic.com) for docs, guides, API and more!
 
 # Introduction
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { dummyShapes } from "../../cypress/assets/shapes";
-import demo from "../../cypress/assets/demo.jpg";
+import demo from "../../cypress/assets/another-demo.jpg";
 import { AnnotationLens } from "@/index";
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
