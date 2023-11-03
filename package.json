@@ -9,6 +9,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vite build",
+    "cy:prepare": "pnpm build",
     "cy:open": "cypress open --component --browser firefox",
     "cy:run": "cypress run --component --browser firefox",
     "docs:start": "pnpm --dir ./docs start",
