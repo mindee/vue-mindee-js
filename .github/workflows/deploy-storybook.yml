@@ -6,7 +6,7 @@ name: "Chromatic Publish"
 # Event for the workflow
 on:
   push:
-    branches: [dev]
+    branches: [main]
   workflow_dispatch:
 
 # List of jobs
