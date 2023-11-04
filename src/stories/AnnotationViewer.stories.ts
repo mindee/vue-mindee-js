@@ -9,7 +9,68 @@ const meta = {
   component: AnnotationViewer,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    data: {
+      description: "The data to be displayed",
+      control: {
+        type: "object",
+      },
+    },
+    options: {
+      description: "The options for the viewer",
+      control: {
+        type: "object",
+      },
+    },
+    style: {
+      description: "The style for the viewer",
+      control: {
+        type: "object",
+      },
+    },
+    id: {
+      description: "The id for the viewer",
+      control: {
+        type: "text",
+      },
+    },
+    getPointerPosition: {
+      description: "The callback for the pointer position",
+      control: {
+        type: "function",
+      },
+    },
+    getStage: {
+      description: "The callback for the stage",
+      control: {
+        type: "function",
+      },
+    },
+    onShapeMultiSelect: {
+      description: "The callback for the shape multi select",
+      control: {
+        type: "function",
+      },
+    },
+    onShapeClick: {
+      description: "The callback for the shape click",
+      control: {
+        type: "function",
+      },
+    },
+    onShapeMouseEnter: {
+      description: "The callback for the shape mouse enter",
+      control: {
+        type: "function",
+      },
+    },
+    onShapeMouseLeave: {
+      description: "The callback for the shape mouse leave",
+      control: {
+        type: "function",
+      },
+    },
+  },
   args: {
     data: {
       image: demo,

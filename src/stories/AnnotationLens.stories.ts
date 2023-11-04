@@ -9,7 +9,44 @@ const meta = {
   component: AnnotationLens,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    data: {
+      description: "The data to be displayed",
+      control: {
+        type: "object",
+      },
+    },
+    options: {
+      description: "The options for the viewer",
+      control: {
+        type: "object",
+      },
+    },
+    style: {
+      description: "The style for the viewer",
+      control: {
+        type: "object",
+      },
+    },
+    id: {
+      description: "The id for the viewer",
+      control: {
+        type: "text",
+      },
+    },
+    getStage: {
+      description: "The callback for the stage",
+      control: {
+        type: "function",
+      },
+    },
+    zoomLevel: {
+      description: "The zoom level",
+      control: {
+        type: "number",
+      },
+    },
+  },
   args: {
     data: {
       image: demo,
