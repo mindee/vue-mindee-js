@@ -80,5 +80,5 @@ Example:
 
 ### JavaScript Styleguide
 
-We keep our code base consistent and we expect React/JavaScript code to must adhere to [JavaScript Standard Style](https://standardjs.com/).
+We keep our code base consistent and we expect Vue/JavaScript code to must adhere to [JavaScript Standard Style](https://standardjs.com/).
 When possible, adding [flow](https://flow.org/) types is also expected.
