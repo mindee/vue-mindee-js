@@ -221,7 +221,7 @@ const resizeImage = () => {
   }
 };
 
-const onZoom = (event: KonvaEventObject<Konva.Stage>) => {
+const onZoom = (event: KonvaEventObject<WheelEvent>) => {
   handleStageZoom(
     stageObject.value as Konva.Stage | null,
     imageBoundingBoxObject.value,

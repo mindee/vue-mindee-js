@@ -1,4 +1,4 @@
-import { AnnotationShape } from "vue-mindee-js";
+import { AnnotationShape } from "@/index";
 
 export const dummyShapes: AnnotationShape[] = [
   {

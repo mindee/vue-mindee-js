@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
-import babel from "vite-babel-plugin";
+import dts from "vite-plugin-dts";
 import vue from "@vitejs/plugin-vue";
 import pkg from "./package.json";
-import path from "path";
+import { resolve } from "path";
 
 const getExternalDeps = () =>
   [
@@ -10,24 +10,19 @@ const getExternalDeps = () =>
     ...Object.keys(pkg.peerDependencies),
   ].filter((dep) => dep !== "pdfjs-dist");
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), babel()],
-
-  define: {
-    "process.env": {},
-  },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@/": new URL("./src/", import.meta.url).pathname,
     },
   },
+  plugins: [vue(), dts({ insertTypesEntry: true, rollupTypes: true })],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      name: "vue-mindee-js",
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "Vue mindee js",
       formats: ["es"],
-      fileName: () => "index.js",
+      fileName: "index",
     },
     rollupOptions: {
       external: getExternalDeps(),

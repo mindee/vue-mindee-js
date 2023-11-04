@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { AnnotationViewer } from "../../dist";
-import type { AnnotationData, AnnotationViewerProps } from "../../dist";
+import { AnnotationViewer } from "@/index";
+import type { AnnotationData } from "@/index";
 import { dummyShapes } from "../assets/shapes";
 import demo from "../assets/demo.jpg";
 import anotherDemo from "../assets/another-demo.jpg";
@@ -76,7 +76,6 @@ const style = computed(() => ({
     :onShapeMouseEnter="props.onShapeMouseEnter"
     :onShapeMouseLeave="props.onShapeMouseLeave"
     :options="{ enableSelection: true }"
-    :getPointerPosition="getPointerPosition"
     :style="style"
   />
 </template>

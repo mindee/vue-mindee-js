@@ -1,0 +1,38 @@
+# .github/workflows/chromatic.yml
+
+# Workflow name
+name: "Chromatic Publish"
+
+# Event for the workflow
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+# List of jobs
+jobs:
+  chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.x
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: install dependencies
+        run: pnpm install
+      - name: build package
+        run: pnpm build
+      #👇 Adds Chromatic as a step in the workflow
+      - uses: chromaui/action@v1
+        # Options required for Chromatic's GitHub Action
+        with:
+          #👇 Chromatic projectToken,
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          autoAcceptChanges: true

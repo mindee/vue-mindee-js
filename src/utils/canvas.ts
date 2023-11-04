@@ -1,19 +1,22 @@
-import {
-  AnnotationShape,
-  AnnotationLensOptions,
-  AnnotationViewerOptions,
-  ImageBoundingBox,
-  PointerPosition,
-} from "@/common/types";
-import { KONVA_REFS } from "@/common/constants";
 import Konva from "konva";
 import { Layer } from "konva/lib/Layer";
 import { Line } from "konva/lib/shapes/Line";
 
+import { KONVA_REFS } from "@/common/constants";
+import {
+  AnnotationLensOptions,
+  AnnotationShape,
+  AnnotationViewerOptions,
+  ImageBoundingBox,
+  PointerPosition,
+} from "@/common/types";
+
+import { roundTo } from "./roundTo";
+
 export const mapShapesToPolygons = (
   shapesLayer: Layer,
   shapes: AnnotationShape[] = [],
-  useEvents: boolean = true,
+  useEvents = true,
   imageBoundingBox: ImageBoundingBox | null,
   options: AnnotationLensOptions | AnnotationViewerOptions,
   onClick?: (shape: AnnotationShape) => void,
@@ -81,8 +84,8 @@ export const scalePointToImage = (
 ) => {
   const { width, height, scale } = imageBoundingBox;
   return {
-    x: (point.x * width) / scale,
-    y: (point.y * height) / scale,
+    x: roundTo((Math.min(point.x, 1) * width) / scale, 2),
+    y: roundTo((Math.min(point.y, 1) * height) / scale, 2),
   };
 };
 
@@ -114,11 +117,15 @@ export const getMousePosition = (
   const stageX = stage.x();
   const stageY = stage.y();
   return {
-    x:
+    x: roundTo(
       ((pointerX - stageX) * imageBoundingBox.scale) /
-      (oldScale * imageBoundingBox.width),
-    y:
+        (oldScale * imageBoundingBox.width),
+      2
+    ),
+    y: roundTo(
       ((pointerY - stageY) * imageBoundingBox.scale) /
-      (oldScale * imageBoundingBox.height),
+        (oldScale * imageBoundingBox.height),
+      2
+    ),
   };
 };
